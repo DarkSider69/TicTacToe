@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@font-face {
+    font-family: KodeMono;
+    src: url(./fonts/KodeMono-VariableFont_wght.ttf);
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.mestvi-title {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mestvi-title h2 {
+    font-family: KodeMono;
+    font-size: 45px;
+    margin-top: 5%;
+}
+
+/* board styling  */
+.board {
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tile {
+    /* background-color: rgb(130, 130, 245); */
+    color: cyan;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-border {
+    border-right: 3px solid rgb(130, 130, 245);
+}
+
+.strike {
+    position: absolute;
+    background-color: darkred;
+}
+
+/* row strike  */
+
+.strike-row-1 {
+    width: 100%;
+    height: 4px;
+    top: 16%;
+}
+
+.strike-row-2 {
+    width: 100%;
+    height: 4px;
+    top: 49%;
+}
+
+.strike-row-3 {
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+
+/* column strike  */
+
+.strike-column-1 {
+    width: 4px;
+    height: 100%;
+    left: 16%;
+}
+
+.strike-column-2 {
+    width: 4px;
+    height: 100%;
+    left: 49%;
+}
+
+.strike-column-3 {
+    width: 4px;
+    height: 100%;
+    left: 83%;
+}
+
+/* diagonal strike  */
+.strike-diagonal-1 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-2 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+
+.bottom-border {
+    border-bottom: 3px solid rgb(130, 130, 245);
+}
+
+/* game over container style  */
+.game-over-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 200px;
+}
+
+.game-over-container h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.play-again-button {
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* hovers  */
+.x-hover:hover::after {
+    content: "X";
+    color: black;
+    opacity: 0.4;
+}
+
+.o-hover:hover::after {
+    content: '0';
+    color: black;
+    opacity: 0.4;
+}
